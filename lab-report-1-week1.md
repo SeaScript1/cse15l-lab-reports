@@ -1,10 +1,10 @@
 # Week 1 Lab Report
 ## Remote Access Tutorial - CSE 15L
 
-1. **Step 1**: Change your account specific password. This is accomplished by visiting [this](https://sdacs.ucsd.edu/~icc/index.php) website, navigating to your course specific account and clicking change password.This will allow you to access the remote directory. Below is an image of the page leading to the password change page:<br><br>
+**Step 1**: Change your account specific password. This is accomplished by visiting [this](https://sdacs.ucsd.edu/~icc/index.php) website, navigating to your course specific account and clicking change password.This will allow you to access the remote directory. Below is an image of the page leading to the password change page:<br><br>
 ![Image](passpage.png)
 
-2. **Step 2**: Install Visual Studio Code. Often called VS Code, Visual Studio Code is a text editor that can be used to create and edit different types of files. <br>
+**Step 2**: Install Visual Studio Code. Often called VS Code, Visual Studio Code is a text editor that can be used to create and edit different types of files. <br>
 <br> 
 VS Code can be installed using the following link: [Visual Studio Code](https://code.visualstudio.com/download) <br>
 <br>
@@ -14,7 +14,7 @@ Once downloaded and opened, VS Code should show a screen similar to the one belo
 <br>
 ![Image](VSCodeHomeSS.png) <br>
 <br>
-3. **Step 3**: Open the terminal through `Terminal > New Terminal` in VS Code and run the ssh command using the name of your specific account. In my case, the command will be: 
+**Step 3**: Open the terminal through `Terminal > New Terminal` in VS Code and run the ssh command using the name of your specific account. In my case, the command will be: 
 ```
 ssh cs15lfa22na@ieng6.ucsd.edu
 ```
@@ -25,7 +25,7 @@ Once the password is successfully entered, you terminal should look something li
 ![Image](TermRemoteAccess.png)
 If you see something similar to the above, you have succeeded in connecting to a remote computer!<br>
 <br>
-4. **Step 4**: **Trying a command**<br>
+**Step 4**: **Trying a command**<br>
 We can now try running a couple of commands in the remote directory. <br>
 <br>
 The `mkdir` command will allow us to create a folder in the remote directory with a specified name. <br>
@@ -34,7 +34,7 @@ Below is an image of the terminal with an example of both commands being used:
 ![Image](TermTestCommands.png)
 <br>
 We can now exit the remote computer using the `exit` command.<br> <br>
-5. **Step 5**: **Copying files to the remote server using the `scp` command** <br>
+**Step 5**: **Copying files to the remote server using the `scp` command** <br>
 We can now create a file on our local computer called `WhereAmI.java`. <br>
 ```
 class WhereAmI {
@@ -63,7 +63,7 @@ where `zz` is replace with the letters in your user specific account name. *You 
 Once the file has been successfully copied to the remote computer, run the compile and run commands in the remote computer to observe the differences in output with the local computer. <br>
 Below is a picture of the process described above: 
 ![Image](TermSCP1.png)<br><br>
-6. **Step 6**: **Generating SSH keys**<br>
+**Step 6**: **Generating SSH keys**<br>
 Generating SSH keys will allow us to access the remote computer without going through the tedious login process. 
 Run the `ssh-keygen` command on your local terminal.
 Press `enter` for every prompt and take note of the location of your public key. In my case, my public key is located in `/Users/script/.ssh/id_rsa`.
@@ -72,7 +72,7 @@ Press `enter` for every prompt and take note of the location of your public key.
 
 Next, login to the remote computer make a directory named `.ssh`. Then, exit the remote computer and use `scp` to copy the public key to the new directory in the remote computer. <br>
 ![Image](Key2.png)<br><br>
-7. **Step 7**: **Optimizing Remote Running** <br>
+**Step 7**: **Optimizing Remote Running** <br>
 
 We can then use the following commands to copy and run and edited version of the WhereAmI file to the remote computer:<br><br>
 ![Image](Key3.png) <br>

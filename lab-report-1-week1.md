@@ -71,9 +71,8 @@ Press `enter` for every prompt and take note of the location of your public key.
 ![Image](Key1.png)<br>
 
 Next, login to the remote computer make a directory named `.ssh`. Then, exit the remote computer and use `scp` to copy the public key to the new directory in the remote computer. <br>
-![Image](Key2.png)<br>
-
-7. **Optimizing Remote Running** <br>
+![Image](Key2.png)<br><br>
+7. **Step 7**: **Optimizing Remote Running** <br>
 
 We can then use the following commands to copy and run and edited version of the WhereAmI file to the remote computer:<br><br>
 ![Image](Key3.png) <br>

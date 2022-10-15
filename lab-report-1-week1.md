@@ -1,7 +1,8 @@
 # Week 1 Lab Report
 ## Remote Access Tutorial - CSE 15L
 
-1. **Step 1**: Change your account specific password. This will allow you to access the remote directory.
+1. **Step 1**: Change your account specific password. This is accomplished by visiting [this](https://sdacs.ucsd.edu/~icc/index.php) website, navigating to your course specific account and clicking change password.This will allow you to access the remote directory. Below is an image of the page leading to the password change page:<br><br>
+![Image](passpage.png)
 
 2. **Step 2**: Install Visual Studio Code. Often called VS Code, Visual Studio Code is a text editor that can be used to create and edit different types of files. <br>
 <br> 
@@ -13,11 +14,11 @@ Once downloaded and opened, VS Code should show a screen similar to the one belo
 <br>
 ![Image](VSCodeHomeSS.png) <br>
 <br>
-3. **Step 3**: Open the terminal in VS Code and run the ssh command using the name of your specific account. In my case, the command will be: 
+3. **Step 3**: Open the terminal through `Terminal > New Terminal` in VS Code and run the ssh command using the name of your specific account. In my case, the command will be: 
 ```
 ssh cs15lfa22na@ieng6.ucsd.edu
 ```
-**Note**: You will have to install the OpenSSH client if you are on Windows. MacOSX and Linux users do not need to do this. <br>
+**Note**: You will have to install the [OpenSSH client](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) if you are on Windows. MacOSX and Linux users do not need to do this. <br>
 <br>
 The terminal will prompt you to enter a password. Something important to note here is that **the terminal will not display the characters of your password**. <br>
 Once the password is successfully entered, you terminal should look something like this:
@@ -34,7 +35,21 @@ Below is an image of the terminal with an example of both commands being used:
 <br>
 We can now exit the remote computer using the `exit` command.<br> <br>
 5. **Step 5**: **Copying files to the remote server using the `scp` command** <br>
-We can now create a file on our local computer called `WhereAmI.java`. Once you have copied the specified code into the file, **remember to save** and compile and run the file using the following commands:
+We can now create a file on our local computer called `WhereAmI.java`. <br>
+```
+class WhereAmI {
+    public static void main(String[] args) {
+      System.out.println("NewLine");
+      System.out.println(System.getProperty("os.name"));
+      System.out.println(System.getProperty("user.name"));
+      System.out.println(System.getProperty("user.home"));
+      System.out.println(System.getProperty("user.dir"));
+    }
+  }
+```
+
+
+Once you have copied the specified code into the file, **remember to save** and compile and run the file using the following commands:
 ```
 javac WhereAmI.java
 java WhereAmI
@@ -55,14 +70,19 @@ Press `enter` for every prompt and take note of the location of your public key.
 
 ![Image](Key1.png)<br>
 
-Next, login to the the remote computer make a directory named `.ssh`. Then, exit the remote computer and use `scp` to copy the public key to the new directory in the remote computer. <br>
+Next, login to the remote computer make a directory named `.ssh`. Then, exit the remote computer and use `scp` to copy the public key to the new directory in the remote computer. <br>
 ![Image](Key2.png)<br>
+
+7. **Optimizing Remote Running** <br>
 
 We can then use the following commands to copy and run and edited version of the WhereAmI file to the remote computer:<br><br>
 ![Image](Key3.png) <br>
 
-The above picture involves running an `scp` command to copy the file to the remote computer followed by a `ssh` command followed by a special syntax to access and run the file in question. <br>
-This gives us a much simpler method of copying and accessing files in betweent he remote and local computer without having to constantly enter a password. 
+The above picture involves running an `scp` command to copy the file to the remote computer followed by a `ssh` command followed by a special syntax to access and run the file in question. Surrounding the command in quotes after an `ssh` command will run it on the remote server and seperating commands with semicolons will allow multiple commands to be run from a single line. <br>
+This gives us a much simpler method of copying and accessing files and running commands in between the remote and local computer without having to constantly enter a password. <br><br>
+![Image](sshremotecom.png)<br>
+
+The above image shows the `ls` command being run from the local computer but being executed in the remote computer, similar to the `javac` and `java` commands from the previous image.   
 
 
 

@@ -5,6 +5,7 @@
 find -name returns the path of the file specified in the command. This is useful simply for obtaining the path of the file, which in turn can be used to identify its location within a directory. 
 
 - Example 1:
+
 ```
 find ./911report -name  chapter-1.txt
 
@@ -76,7 +77,7 @@ Bounds can also be applies to the command:
 ```
 find . -mtime +1 -mtime -5
 
-# This command finds files that were modifed more than 1 day ago but less than 5 days ago. 
+#This command finds files that were modifed more than 1 day ago but less than 5 days ago. 
 
 Output:
 No output since there are no files int he directory that were altered more than 24 hours ago. 
